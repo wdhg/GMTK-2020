@@ -1,6 +1,6 @@
 using static Interactable;
 
-public static class interactableMethods {
+public static class InteractableMethods {
 
     public static Interactable identifyInteractable(string id) {
         switch (id) {

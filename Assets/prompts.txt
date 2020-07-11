@@ -8,7 +8,7 @@ Press small button;yellow_circle
 Slide slider to two;slider_1
 Virus! Reboot needed!;lever
 Press left-hand square button;red_square
-Press center square button;green_button
+Press center square button;green_square
 Press right-hand square button;blue_square
 Press round button;red_circle
 Press round button;yellow_circle
