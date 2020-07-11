@@ -1,15 +1,14 @@
-using static interactableMethods;
+using static InteractableMethods;
 
-public class promptPair {
+public class PromptPair {
 
     private string prompt;
     private Interactable interactable;
 
-    public promptPair createPair(string input) {
+    public PromptPair(string input) {
         string[] halves = input.Split(';');
         prompt = halves[0];
         interactable = identifyInteractable(halves[1]);
-        return this;
     }
 
     public string getString() {
