@@ -1,0 +1,17 @@
+Press red button;red_square
+Press red button;big_circle
+Press green button;green_square
+Press blue button;blue_square
+Press yellow button;small_circle
+Press big button;big_circle
+Press small button;small_circle
+Slide slider to two;slider
+Virus! Reboot needed!;lever
+Press left-hand square button;red_square
+Press center square button;green_button
+Press right-hand square button;blue_square
+Press round button;big_circle
+Press round button;small_circle
+Press square button;red_square
+Press square button;green_square
+Press square button;blue_square
