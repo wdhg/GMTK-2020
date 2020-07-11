@@ -1,4 +1,4 @@
-public enum buttonEnum {
+public enum Interactable {
     RED_SQUARE,
     GREEN_SQUARE,
     BLUE_SQUARE,

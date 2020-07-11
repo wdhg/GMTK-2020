@@ -1,8 +1,8 @@
-using Interactable;
+using static Interactable;
 
 public static class interactableMethods {
 
-    public static Interactable identifyInteractable(String id) {
+    public static Interactable identifyInteractable(string id) {
         switch (id) {
             case "red_square":
                 return RED_SQUARE;
@@ -24,7 +24,7 @@ public static class interactableMethods {
                 return SLIDER_3;
             case "slider_4":
                 return SLIDER_4;
-            case "lever":
+            default:
                 return LEVER;
         }
     }

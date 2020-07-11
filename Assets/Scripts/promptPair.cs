@@ -1,20 +1,18 @@
-using Interactable;
-using InteractableMethods;
-using String;
+using static interactableMethods;
 
 public class promptPair {
 
-    private String prompt;
+    private string prompt;
     private Interactable interactable;
 
-    public promptPair createPair(String input) {
+    public promptPair createPair(string input) {
         string[] halves = input.Split(';');
         prompt = halves[0];
-        button = identifyInteractable(halves[1]);
+        interactable = identifyInteractable(halves[1]);
         return this;
     }
 
-    public String getString() {
+    public string getString() {
         return prompt;
     }
 

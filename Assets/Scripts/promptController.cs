@@ -1,6 +1,5 @@
-using List;
-using Interactable;
-using promptPair;
+using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class promptController : MonoBehaviour {
@@ -25,13 +24,13 @@ public class promptController : MonoBehaviour {
 
     private void getNewPrompt() {
         //current prompt = random prompt from list
-        var random = new Random();
+        System.Random random = new System.Random();
         int index = random.Next(prompts.Count);
         prompt = prompts[index];
 
         //NEEDS TO BE MADE
         //work value to go up
-        displayPrompt(prompt.getString());
+        //displayPrompt(prompt.getString());
     }
 
     public void checkInteractable(Interactable interactable) {
