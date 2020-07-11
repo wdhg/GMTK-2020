@@ -4,27 +4,27 @@ using UnityEngine;
 public class HandController : MonoBehaviour {
 
   public float maxSpeed;
-
   public bool isShaking;
-  private float shakeAmount = 5f;
-  private float shakeAngle = 0f;
+  public float shakeAmount = 5f;
 
-  public bool isWobbling;
-  private float wobbleAmountDelta = 0.2f;
-  private float wobbleAmount = 0f;
-  private float wobbleAmountMax = 2f;
-  private float wobble = 0f;
-  private float wobbleMax = 4f;
+  private Vector2 shake = Vector2.zero;
+  private Rigidbody2D rb;
+
+  private void Start() {
+    this.rb = this.GetComponent<Rigidbody2D>();
+  }
 
   private Vector2 GetMousePos() {
     return Camera.main.ScreenToWorldPoint(Input.mousePosition);
   }
 
   private void Move() {
-    this.transform.position = Vector2.MoveTowards(
-      this.transform.position,
-      this.GetMousePos(),
-      maxSpeed * Time.deltaTime
+    Vector2 difference = this.GetMousePos() - (Vector2) this.transform.position;
+    this.rb.MovePosition(
+      this.rb.position
+      + difference.normalized
+      * Mathf.Min(this.maxSpeed * Time.fixedDeltaTime, difference.magnitude)
+      + shake * Time.fixedDeltaTime
     );
   }
 
@@ -37,32 +37,14 @@ public class HandController : MonoBehaviour {
   }
 
   private void Shake() {
-    this.shakeAngle += this.RandomRange((float) Math.PI / 2f);
-    Vector2 dir = this.AngleToVector(shakeAngle);
-    this.transform.position += (Vector3) dir * shakeAmount * Time.deltaTime;
+    float angle = this.RandomRange((float) Math.PI);
+    this.shake = this.AngleToVector(angle) * this.shakeAmount;
   }
 
-  private void Wobble() {
-    Vector2 dir = (this.GetMousePos() - (Vector2) this.transform.position).normalized;
-    dir = new Vector2(dir.y, dir.x);
-    if(dir == Vector2.zero) {
-      Shake();
-    } else {
-      this.wobbleAmount += this.RandomRange(this.wobbleAmountDelta);
-      this.wobbleAmount = Mathf.Clamp(this.wobbleAmount, -this.wobbleAmountMax, this.wobbleAmountMax);
-      this.wobble += this.RandomRange(this.wobbleAmount);
-      this.wobble = Mathf.Clamp(this.wobble, -this.wobbleMax, this.wobbleMax);
-      this.transform.position += (Vector3) dir * this.wobble * Time.deltaTime;
-    }
-  }
-
-  public void Update() {
-    Move();
+  private void FixedUpdate() {
     if(isShaking) {
       this.Shake();
     }
-    if (isWobbling) {
-      this.Wobble();
-    }
+    Move();
   }
 }
