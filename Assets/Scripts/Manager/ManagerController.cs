@@ -10,7 +10,7 @@ public class ManagerController : MonoBehaviour {
   public Text message;
   public GameObject display;
 
-  private string messageText;
+  private string messageText = "";
   private int textIndex;
   private float timeSinceSay;
 
