@@ -5,11 +5,11 @@ public class HandController : MonoBehaviour {
 
   public float maxSpeed;
 
-  private bool isShaking = false;
+  public bool isShaking;
   private float shakeAmount = 5f;
   private float shakeAngle = 0f;
 
-  private bool isWobbling = true;
+  public bool isWobbling;
   private float wobbleAmountDelta = 0.2f;
   private float wobbleAmount = 0f;
   private float wobbleAmountMax = 2f;
