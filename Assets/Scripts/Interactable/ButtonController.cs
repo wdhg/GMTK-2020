@@ -6,6 +6,11 @@ using UnityEngine.UIElements;
 public class ButtonController : MonoBehaviour {
 
   public string id;
+  public PromptController screen;
+
+  public void Start() {
+    screen = GameObject.Find("Screen").GetComponent<PromptController>();
+  }
 
   bool handHovering = false;
 
@@ -18,6 +23,9 @@ public class ButtonController : MonoBehaviour {
   private void OnTriggerExit2D(Collider2D collision) {
     if(collision.tag == "Hand") {
       this.handHovering = false;
+    }
+    if (screen != null) {
+      screen.checkInteractable(id);
     }
   }
 
