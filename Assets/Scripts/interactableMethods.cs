@@ -10,10 +10,12 @@ public static class interactableMethods {
                 return GREEN_SQUARE;
             case "blue_square":
                 return BLUE_SQUARE;
-            case "big_circle":
-                return BIG_CIRCLE;
-            case "small_circle":
-                return SMALL_CIRCLE;
+            case "red_circle":
+                return RED_CIRCLE;
+            case "yellow_circle":
+                return YELLOW_CIRCLE;
+            case "slider_0":
+                return SLIDER_0;
             case "slider_1":
                 return SLIDER_1;
             case "slider_2":
@@ -22,8 +24,6 @@ public static class interactableMethods {
                 return SLIDER_3;
             case "slider_4":
                 return SLIDER_4;
-            case "slider_5":
-                return SLIDER_5;
             case "lever":
                 return LEVER;
         }
