@@ -58,7 +58,7 @@ public class PromptController : MonoBehaviour {
             //increment work thing
             getNewPrompt();
         } else {
-            Debug.Log(interactable + " != " + prompt.getInteractable());
+            work.decrease(0.05f);
         }
     }
 
