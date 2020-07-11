@@ -47,7 +47,6 @@ public class PromptController : MonoBehaviour {
         if (work != null) {
             work.increase(0.1f);
         }
-
         if (promptText != null) {
             promptText.displayPrompt(prompt.getString());
         }
