@@ -48,10 +48,6 @@ public class PromptController : MonoBehaviour {
             Debug.Log("Prompt: " + prompt.getString());
             Debug.Log("Button required: " + prompt.getInteractable());
         }
-        //work value to go up
-        if (work != null) {
-            work.increase(0.1f);
-        }
         if (promptText != null) {
             promptText.displayPrompt(prompt.getString());
         }
@@ -60,7 +56,9 @@ public class PromptController : MonoBehaviour {
     public void checkInteractable(string id) {
         Interactable interactable = identifyInteractable(id);
         if (interactable == prompt.getInteractable()) {
-            //increment work thing
+            if (work != null) {
+                work.increase(0.1f);
+            }
             getNewPrompt();
         } else {
             work.decrease(0.05f);

@@ -12,7 +12,8 @@ public class ManagerController : MonoBehaviour {
   public float pitchMin, pitchMax;
   public AudioClip sfx;
   public float minInterval, maxInterval;
-  public Meter sanity;
+  private GameObject sanityMeter;
+  private Meter sanity;
 
   private string messageText = "";
   private int textIndex;
@@ -27,6 +28,10 @@ public class ManagerController : MonoBehaviour {
     this.LoadInsults();
     this.intervalTime = Random.Range(this.minInterval, this.maxInterval);
     this.speaking = false;
+    sanityMeter = GameObject.Find("SanityMeter");
+    if (sanityMeter != null) {
+        sanity = sanityMeter.GetComponent<Meter>();
+    }
   }
 
   private void LoadInsults() {
@@ -48,7 +53,9 @@ public class ManagerController : MonoBehaviour {
     this.messageText = this.insults[index];
     this.textIndex = 0;
     this.timeSinceSay = 0f;
-    sanity.decrease(0.15f);
+    if (sanity != null) {
+      sanity.decrease(0.15f);
+    }
     this.display.SetActive(true);
     this.audioSource.pitch = Random.Range(this.pitchMin, this.pitchMax);
     this.audioSource.Play();
