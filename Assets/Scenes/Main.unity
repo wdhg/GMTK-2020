@@ -5555,7 +5555,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentValue: 1
   timePerDecrement: 1
-  work: 1
+  work: 0
   fill: {fileID: 0}
 --- !u!1 &1673398024
 GameObject:
