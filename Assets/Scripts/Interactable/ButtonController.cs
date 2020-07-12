@@ -106,11 +106,11 @@ public class ButtonController : MonoBehaviour {
         }
         break;
       case "lever":
-        if (transform.localPosition == new Vector3 (3.368f, 4.218f, 0)) {
-          transform.localPosition = new Vector3 (3.368f, 2.814f, 0);
+        if (transform.localPosition == new Vector3 (3.8f, 4.218f, 0)) {
+          transform.localPosition = new Vector3 (3.8f, 2.814f, 0);
           transform.Rotate(new Vector3 (0, 0, 90), Space.World);
         } else {
-          transform.localPosition = new Vector3 (3.368f, 4.218f, 0);
+          transform.localPosition = new Vector3 (3.8f, 4.218f, 0);
           transform.Rotate(new Vector3 (0, 0, -90), Space.World);
         }
         break;
