@@ -30,7 +30,7 @@ public class ManagerController : MonoBehaviour {
     this.textIndex++;
   }
 
-  public void Update() {
+  private void Update() {
     float speakTime = this.messageText.Length * this.characterTime;
     if(this.display.activeSelf && speakTime + this.idleTime <= this.timeSinceSay) {
       this.display.SetActive(false);
