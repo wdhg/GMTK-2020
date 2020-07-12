@@ -19,7 +19,7 @@ public class ManagerController : MonoBehaviour {
   private int textIndex;
   private float timeSinceSay;
   private AudioSource audioSource;
-  private List<string> insults;
+  private List<string> insults = new List<string>();
   private float intervalTime;
   private bool speaking;
 
@@ -35,16 +35,14 @@ public class ManagerController : MonoBehaviour {
   }
 
   private void LoadInsults() {
-    this.insults = new List<string>();
-    StreamReader sr = new StreamReader("Assets/insults.txt");
-    using (sr) {
-      string read;
-      if (sr != null) {
-        while((read = sr.ReadLine()) != null) {
-          this.insults.Add(read);
-        }
-      }
-    }
+    insults.Add("You are a big dummy");
+    insults.Add("Do you even know spreadsheets?");
+    insults.Add("You're behind schedule doofus!");
+    insults.Add("My child could do a better job!");
+    insults.Add("No wonder your wife left you");
+    insults.Add("Do I smell booze?");
+    insults.Add("You're getting a demotion!");
+    insults.Add("Have a shower once in a while");
   }
 
   public void Say() {

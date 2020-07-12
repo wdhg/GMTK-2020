@@ -24,17 +24,55 @@ public class PromptController : MonoBehaviour {
     }
 
     private void initPrompts() {
-        StreamReader sr = new StreamReader("Assets/prompts.txt");
-        using (sr) {
-            string read;
-            if (sr != null) {
-                while ((read = sr.ReadLine()) != null) {
-                    PromptPair pair = new PromptPair(read);
-                    prompts.Add(pair);
-                }
-            }
-        }
-    }
+    prompts.Add(new PromptPair("Press the red button;red_square"));
+    prompts.Add(new PromptPair("Press the red button;red_circle"));
+    prompts.Add(new PromptPair("Press the green button;green_square"));
+    prompts.Add(new PromptPair("Press the blue button;blue_square"));
+    prompts.Add(new PromptPair("Press the yellow button;yellow_circle"));
+    prompts.Add(new PromptPair("Press the big button;red_circle"));
+    prompts.Add(new PromptPair("Press the small button;yellow_circle"));
+    prompts.Add(new PromptPair("Slide the slider to one;slider_0"));
+    prompts.Add(new PromptPair("Slide the slider to two;slider_1"));
+    prompts.Add(new PromptPair("Slide the slider to three;slider_2"));
+    prompts.Add(new PromptPair("Slide the slider to four;slider_3"));
+    prompts.Add(new PromptPair("Slide the slider to five;slider_4"));
+    prompts.Add(new PromptPair("Pull the lever;lever"));
+    prompts.Add(new PromptPair("Press the left-hand square button;red_square"));
+    prompts.Add(new PromptPair("Press the center square button;green_square"));
+    prompts.Add(new PromptPair("Press the right-hand square button;blue_square"));
+    prompts.Add(new PromptPair("Press the left-hand round button;red_circle"));
+    prompts.Add(new PromptPair("Press the right-hand round button;yellow_circle"));
+    prompts.Add(new PromptPair("Press the round button;red_circle"));
+    prompts.Add(new PromptPair("Press the round button;yellow_circle"));
+    prompts.Add(new PromptPair("Press the square button;red_square"));
+    prompts.Add(new PromptPair("Press the square button;green_square"));
+    prompts.Add(new PromptPair("Press the square button;blue_square"));
+    prompts.Add(new PromptPair("Hit the square;green_square"));
+    prompts.Add(new PromptPair("Smash that blue button;blue_square"));
+    prompts.Add(new PromptPair("Red button, please;red_circle"));
+    prompts.Add(new PromptPair("Slide to the leftmost slider slot;slider_0"));
+    prompts.Add(new PromptPair("Slide to the rightmost slider slot;slider_4"));
+    prompts.Add(new PromptPair("Move the slider to the center;slider_2"));
+    prompts.Add(new PromptPair("Hit the small round button;yellow_circle"));
+    prompts.Add(new PromptPair("Slap the red square button;red_square"));
+    prompts.Add(new PromptPair("Push the red button;red_circle"));
+    prompts.Add(new PromptPair("Push the red button;red_square"));
+    prompts.Add(new PromptPair("Hit the green square;green_square"));
+    prompts.Add(new PromptPair("Smash that round button;yellow_circle"));
+    prompts.Add(new PromptPair("Smash that round button;red_circle"));
+    prompts.Add(new PromptPair("Hit that button;red_square"));
+    prompts.Add(new PromptPair("Hit that button;blue_square"));
+    prompts.Add(new PromptPair("Hit that button;yellow_circle"));
+    prompts.Add(new PromptPair("Slap the red round button;red_circle"));
+    prompts.Add(new PromptPair("Push the green button;green_square"));
+    prompts.Add(new PromptPair("Get the lever;lever"));
+    prompts.Add(new PromptPair("Set the slider to four;slider_3"));
+    prompts.Add(new PromptPair("Set the slider to one;slider_0"));
+    prompts.Add(new PromptPair("Set the slider to five;slider_4"));
+    prompts.Add(new PromptPair("Switch that lever;lever"));
+    prompts.Add(new PromptPair("Push the lever;lever"));
+    prompts.Add(new PromptPair("Activate the lever;lever"));
+  }
 
     private void getNewPrompt() {
         previous = prompt;

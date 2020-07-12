@@ -24,6 +24,7 @@ public class ContrabandController : MonoBehaviour {
       if (Config.DEBUG) {
         Debug.Log("Contraband pressed");
       }
+      this.GetComponent<AudioSource>().Play();
       sanity.increase(0.2f);
       hand.StartShake();
     }
