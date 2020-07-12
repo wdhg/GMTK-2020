@@ -24,7 +24,7 @@ public class ContrabandController : MonoBehaviour {
       if (Config.DEBUG) {
         Debug.Log("Contraband pressed");
       }
-      sanity.increase(0.1f);
+      sanity.increase(0.2f);
       hand.StartShake();
     }
   }

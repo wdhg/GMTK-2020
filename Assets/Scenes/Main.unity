@@ -190,7 +190,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 5
-  shakeAmount: 5
+  shakeAmount: 8
   shakeTimeMax: 10
 --- !u!4 &265500
 Transform:
@@ -2423,7 +2423,7 @@ PrefabInstance:
     - target: {fileID: 4599092555229141400, guid: 807b714395b136e4f96d7ebedde95c54,
         type: 3}
       propertyPath: idleTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4599092555229141400, guid: 807b714395b136e4f96d7ebedde95c54,
         type: 3}
