@@ -78,31 +78,31 @@ public class ButtonController : MonoBehaviour {
       case "slider_0":
         sprite = GameObject.Find("Handle").GetComponent<Transform>();
         if (sprite != null) {
-          sprite.localPosition = new Vector3(-0.2399f, -0.2f, 0);
+          sprite.localPosition = new Vector3(-0.2362f, 0.5f, 0);
         }
         break;
       case "slider_1":
         sprite = GameObject.Find("Handle").GetComponent<Transform>();
         if (sprite != null) {
-          sprite.localPosition = new Vector3(-0.1238f, -0.2f, 0);
+          sprite.localPosition = new Vector3(-0.121f, 0.5f, 0);
         }
         break;
       case "slider_2":
         sprite = GameObject.Find("Handle").GetComponent<Transform>();
         if (sprite != null) {
-          sprite.localPosition = new Vector3(-0.0105f, -0.2f, 0);
+          sprite.localPosition = new Vector3(-0.0071f, 0.5f, 0);
         }
         break;
       case "slider_3":
         sprite = GameObject.Find("Handle").GetComponent<Transform>();
         if (sprite != null) {
-          sprite.localPosition = new Vector3(0.1056f, -0.2f, 0);
+          sprite.localPosition = new Vector3(0.1063f, 0.5f, 0);
         }
         break;
       case "slider_4":
         sprite = GameObject.Find("Handle").GetComponent<Transform>();
         if (sprite != null) {
-          sprite.localPosition = new Vector3(0.2217f, -0.2f, 0);
+          sprite.localPosition = new Vector3(0.2242f, 0.5f, 0);
         }
         break;
       case "lever":
