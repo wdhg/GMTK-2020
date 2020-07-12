@@ -12,6 +12,7 @@ public class ManagerController : MonoBehaviour {
   public float pitchMin, pitchMax;
   public AudioClip sfx;
   public float minInterval, maxInterval;
+  public Meter sanity;
 
   private string messageText = "";
   private int textIndex;
@@ -47,6 +48,7 @@ public class ManagerController : MonoBehaviour {
     this.messageText = this.insults[index];
     this.textIndex = 0;
     this.timeSinceSay = 0f;
+    sanity.decrease(0.15f);
     this.display.SetActive(true);
     this.audioSource.pitch = Random.Range(this.pitchMin, this.pitchMax);
     this.audioSource.Play();
