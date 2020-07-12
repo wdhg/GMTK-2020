@@ -12,13 +12,16 @@ public class ButtonController : MonoBehaviour {
   public Vector3 animated;
   public float timer = 0.0f;
   public float buttonPressTime = 0.2f;
-  bool animating;
+  
+  private bool animating;
+  private bool handHovering = false;
+  private AudioSource audioSource;
 
-  public void Start() {
-    screen = GameObject.Find("Screen").GetComponent<PromptController>();
+  private void Start() {
+    this.screen = GameObject.Find("Screen").GetComponent<PromptController>();
+    audioSource = this.GetComponent<AudioSource>();
   }
 
-  bool handHovering = false;
 
   private void OnTriggerEnter2D(Collider2D collision) {
     if(collision.tag == "Hand") {
@@ -34,6 +37,7 @@ public class ButtonController : MonoBehaviour {
 
   private void Update() {
     if(this.handHovering && Input.GetKeyDown(KeyCode.Mouse0)) {
+      this.audioSource.Play();
       if(Config.DEBUG) {
         Debug.Log("Button " + id + " pressed");
       }
