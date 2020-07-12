@@ -74,7 +74,6 @@ public class ButtonController : MonoBehaviour {
             animating = true;
         }
         break;
-      //case "lever":
       case "slider_0":
         sprite = GameObject.Find("Handle").GetComponent<Transform>();
         if (sprite != null) {
