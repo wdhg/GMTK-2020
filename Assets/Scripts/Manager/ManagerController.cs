@@ -9,10 +9,14 @@ public class ManagerController : MonoBehaviour {
   public float idleTime;
   public Text message;
   public GameObject display;
+  public float pitchMin, pitchMax;
+  public AudioClip sfx;
 
   private string messageText = "";
   private int textIndex;
   private float timeSinceSay;
+  private AudioSource audioSource;
+
 
   public void Say(string text) {
     this.message.text = "";
@@ -21,6 +25,10 @@ public class ManagerController : MonoBehaviour {
     this.timeSinceSay = 0f;
     this.display.SetActive(true);
   }
+  private void Start() {
+    this.audioSource = this.GetComponent<AudioSource>();
+    this.Say("Butt face");
+  }
 
   private void SayCharacter() {
     if(Config.DEBUG) {
@@ -28,6 +36,8 @@ public class ManagerController : MonoBehaviour {
     }
     this.message.text += this.messageText[this.textIndex];
     this.textIndex++;
+    this.audioSource.pitch = Random.Range(this.pitchMin, this.pitchMax);
+    this.audioSource.PlayOneShot(this.sfx);
   }
 
   private void Update() {
@@ -41,4 +51,5 @@ public class ManagerController : MonoBehaviour {
     }
     this.timeSinceSay += Time.deltaTime;
   }
+
 }
