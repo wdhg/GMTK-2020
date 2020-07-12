@@ -42,8 +42,12 @@ public class HandController : MonoBehaviour {
     this.shake = this.AngleToVector(angle) * this.shakeAmount;
   }
 
+  public bool IsShaking() {
+    return 0 < this.shakeTime;
+  }
+
   private void FixedUpdate() {
-    if(0 < this.shakeTime) {
+    if(this.IsShaking()) {
       this.Shake();
     } else {
       this.shake = Vector2.zero;
