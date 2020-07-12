@@ -1,5 +1,5 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,28 +16,39 @@ public class ManagerController : MonoBehaviour {
   private int textIndex;
   private float timeSinceSay;
   private AudioSource audioSource;
+  private List<string> insults;
 
+  private void Start() {
+    this.audioSource = this.GetComponent<AudioSource>();
+    this.LoadInsults();
+  }
 
-  public void Say(string text) {
+  private void LoadInsults() {
+    this.insults = new List<string>();
+    StreamReader sr = new StreamReader("Assets/insults.txt");
+    using (sr) {
+      string read;
+      if (sr != null) {
+        while((read = sr.ReadLine()) != null) {
+          this.insults.Add(read);
+        }
+      }
+    }
+  }
+
+  public void Say() {
     this.message.text = "";
-    this.messageText = text;
+    int index = Random.Range(0, this.insults.Count);
+    this.messageText = this.insults[index];
     this.textIndex = 0;
     this.timeSinceSay = 0f;
     this.display.SetActive(true);
+    this.audioSource.pitch = Random.Range(this.pitchMin, this.pitchMax);
+    this.audioSource.Play();
   }
-  private void Start() {
-    this.audioSource = this.GetComponent<AudioSource>();
-    this.Say("Butt face");
-  }
-
   private void SayCharacter() {
-    if(Config.DEBUG) {
-      Debug.Log(this.messageText[this.textIndex]);
-    }
     this.message.text += this.messageText[this.textIndex];
     this.textIndex++;
-    this.audioSource.pitch = Random.Range(this.pitchMin, this.pitchMax);
-    this.audioSource.PlayOneShot(this.sfx);
   }
 
   private void Update() {
