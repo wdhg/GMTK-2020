@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
     }
     if (isGameOver) {
       if (Input.anyKeyDown) {
-        SceneManager.LoadScene(0); // TODO set final scene number here
+        SceneManager.LoadScene(1); // TODO set final scene number here
       }
     } else {
       time += Time.deltaTime;
@@ -28,7 +28,7 @@ public class GameManager : MonoBehaviour {
       if(sanity.currentValue <= 0 || work.currentValue <= 0) {
         ui.SetActive(false);
         gameOver.SetActive(true);
-        timeText.text = "Time - " + (Mathf.Round(time * 100) / 100).ToString();
+        timeText.text = "You lasted " + (Mathf.Round(time * 100) / 100).ToString() + "s";
         this.isGameOver = true;
       }
     }

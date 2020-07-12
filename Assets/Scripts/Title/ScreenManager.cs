@@ -33,7 +33,7 @@ public class ScreenManager : MonoBehaviour {
         activeScreen = creditsScreen;
         break;
       case Screen.Play:
-        SceneManager.LoadScene(0); // TODO change this number to final Main scene number
+        SceneManager.LoadScene(1); // TODO change this number to final Main scene number
         return;
     }
     activeScreen.SetActive(true);
