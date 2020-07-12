@@ -4,11 +4,12 @@ using UnityEngine;
 public class HandController : MonoBehaviour {
 
   public float maxSpeed;
-  public bool isShaking;
   public float shakeAmount = 5f;
+  public float shakeTimeMax = 10f;
 
   private Vector2 shake = Vector2.zero;
   private Rigidbody2D rb;
+  private float shakeTime = 0f;
 
   private void Start() {
     this.rb = this.GetComponent<Rigidbody2D>();
@@ -42,9 +43,16 @@ public class HandController : MonoBehaviour {
   }
 
   private void FixedUpdate() {
-    if(isShaking) {
+    if(0 < this.shakeTime) {
       this.Shake();
+    } else {
+      this.shake = Vector2.zero;
     }
     Move();
+    this.shakeTime -= Time.fixedDeltaTime;
+  }
+
+  public void StartShake() {
+    this.shakeTime = this.shakeTimeMax;
   }
 }
