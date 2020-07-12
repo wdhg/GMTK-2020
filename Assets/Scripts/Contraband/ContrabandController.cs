@@ -1,31 +1,31 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class ContrabandController : MonoBehaviour {
 
-  public bool alcohol;
-  public GameObject sanityMeter;
-  private Meter sanity;
+  public Meter sanity;
+  public HandController hand;
 
-  private void Start() {
-      sanityMeter = GameObject.Find("SanityMeter");
-      if (sanityMeter != null) {
-          sanity = sanityMeter.GetComponent<Meter>();
-      }
+  private bool handHovering = false;
+
+  private void OnTriggerEnter2D(Collider2D collision) {
+    if(collision.tag == "Hand") {
+      this.handHovering = true;
+    }
   }
 
-  public void OnMouseDown() {
-    if (Config.DEBUG) {
-      Debug.Log("Contraband (is alcohol = " + alcohol + ") pressed");
+  private void OnTriggerExit2D(Collider2D collision) {
+    if(collision.tag == "Hand") {
+      this.handHovering = false;
     }
-    if (sanity != null) {
-      sanity.increase(0.1f);
-    }
-    if (alcohol) {
-      
-    } else {
+  }
 
+  private void Update() {
+    if(handHovering && Input.GetKeyDown(KeyCode.Mouse0) && !hand.IsShaking()) {
+      if (Config.DEBUG) {
+        Debug.Log("Contraband pressed");
+      }
+      sanity.increase(0.2f);
+      hand.StartShake();
     }
   }
 }
