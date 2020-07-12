@@ -10,6 +10,7 @@ public class PromptController : MonoBehaviour {
     private GameObject workMeter;
     private Meter work;
     PromptPair prompt;
+    PromptPair previous;
 
     private void Start() {
         initPrompts();
@@ -19,6 +20,7 @@ public class PromptController : MonoBehaviour {
             work = workMeter.GetComponent<Meter>();
         }
         getNewPrompt();
+        previous = prompt;
     }
 
     private void initPrompts() {
@@ -35,14 +37,17 @@ public class PromptController : MonoBehaviour {
     }
 
     private void getNewPrompt() {
-        System.Random random = new System.Random();
-        int index = random.Next(prompts.Count);
-        prompt = prompts[index];
+        previous = prompt;
+        while (previous == prompt) {
+            System.Random random = new System.Random();
+            int index = random.Next(prompts.Count);
+            prompt = prompts[index];
+        }
+        previous = prompt;
         if(Config.DEBUG) {
             Debug.Log("Prompt: " + prompt.getString());
             Debug.Log("Button required: " + prompt.getInteractable());
         }
-
         //work value to go up
         if (work != null) {
             work.increase(0.1f);

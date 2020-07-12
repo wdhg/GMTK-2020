@@ -39,7 +39,7 @@ public class Meter : MonoBehaviour {
         }
         if (currentValue <= minValue) {
             if(Config.DEBUG) {
-                Debug.Log("Game over - Work at 0");
+                Debug.Log("Game over");
             }
             //game over
         }
