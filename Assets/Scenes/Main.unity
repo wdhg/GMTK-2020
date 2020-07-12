@@ -2435,6 +2435,16 @@ PrefabInstance:
       propertyPath: pitchMax
       value: 1.2
       objectReference: {fileID: 0}
+    - target: {fileID: 4599092555229141400, guid: 807b714395b136e4f96d7ebedde95c54,
+        type: 3}
+      propertyPath: minInterval
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599092555229141400, guid: 807b714395b136e4f96d7ebedde95c54,
+        type: 3}
+      propertyPath: maxInterval
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4599092555229141401, guid: 807b714395b136e4f96d7ebedde95c54,
         type: 3}
       propertyPath: m_Name

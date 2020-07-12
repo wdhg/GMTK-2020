@@ -11,16 +11,21 @@ public class ManagerController : MonoBehaviour {
   public GameObject display;
   public float pitchMin, pitchMax;
   public AudioClip sfx;
+  public float minInterval, maxInterval;
 
   private string messageText = "";
   private int textIndex;
   private float timeSinceSay;
   private AudioSource audioSource;
   private List<string> insults;
+  private float intervalTime;
+  private bool speaking;
 
   private void Start() {
     this.audioSource = this.GetComponent<AudioSource>();
     this.LoadInsults();
+    this.intervalTime = Random.Range(this.minInterval, this.maxInterval);
+    this.speaking = false;
   }
 
   private void LoadInsults() {
@@ -52,9 +57,19 @@ public class ManagerController : MonoBehaviour {
   }
 
   private void Update() {
+    if (0 < this.intervalTime) {
+      this.intervalTime -= Time.deltaTime;
+      return;
+    }
+    if (!this.speaking) {
+      this.speaking = true;
+      this.Say();
+    }
     float speakTime = this.messageText.Length * this.characterTime;
     if(this.display.activeSelf && speakTime + this.idleTime <= this.timeSinceSay) {
       this.display.SetActive(false);
+      this.intervalTime = Random.Range(this.minInterval, this.maxInterval);
+      this.speaking = false;
       return;
     }
     if(this.message.text.Length * this.characterTime < this.timeSinceSay && this.timeSinceSay < speakTime) {
