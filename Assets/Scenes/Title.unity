@@ -1288,8 +1288,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.00000011921, y: -22}
-  m_SizeDelta: {x: 2566.2036, y: 3152.7852}
+  m_AnchoredPosition: {x: 1.4e-14, y: -22.1}
+  m_SizeDelta: {x: 2566.2036, y: 3215.7432}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188927182
 MonoBehaviour:
@@ -1323,8 +1323,11 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: This is where we put the instructions for the game. The game instructions.
-    The instructions chosen specifically to play the game.
+  m_Text: Your manager, Jeff, has told your office their productivity is unacceptably
+    low. To compensate, he's giving you more work. You must follow the prompts on
+    your computer correctly to keep up your work levels while coping with Jeff's
+    insults by keeping up your sanity levels. You can increase your sanity by drinking
+    on the job, but beware the side effects...
 --- !u!222 &1188927183
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2446,15 +2449,14 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Everything
-
-    William Grant
+  m_Text: 'Made by William Grant and Hana Watson for the GMTK 2020 Game Jam.
 
 
-    "How do I do this again"
+    wdhg
+    on Github
 
-    Hana
-    Watson'
+
+    hanawatson on Github'
 --- !u!222 &1863965796
 CanvasRenderer:
   m_ObjectHideFlags: 0
