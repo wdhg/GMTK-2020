@@ -1,17 +1,48 @@
-Press red button;red_square
-Press red button;red_circle
-Press green button;green_square
-Press blue button;blue_square
-Press yellow button;yellow_circle
-Press big button;red_circle
-Press small button;yellow_circle
-Slide slider to two;slider_1
-Virus! Reboot needed!;lever
-Press left-hand square button;red_square
-Press center square button;green_square
-Press right-hand square button;blue_square
-Press round button;red_circle
-Press round button;yellow_circle
-Press square button;red_square
-Press square button;green_square
-Press square button;blue_square
+Press the red button;red_square
+Press the red button;red_circle
+Press the green button;green_square
+Press the blue button;blue_square
+Press the yellow button;yellow_circle
+Press the big button;red_circle
+Press the small button;yellow_circle
+Slide the slider to one;slider_0
+Slide the slider to two;slider_1
+Slide the slider to three;slider_2
+Slide the slider to four;slider_3
+Slide the slider to five;slider_4
+Pull the lever;lever
+Press the left-hand square button;red_square
+Press the center square button;green_square
+Press the right-hand square button;blue_square
+Press the left-hand round button;red_circle
+Press the right-hand round button;yellow_circle
+Press the round button;red_circle
+Press the round button;yellow_circle
+Press the square button;red_square
+Press the square button;green_square
+Press the square button;blue_square
+Hit the square;green_square
+Smash that blue button;blue_square
+Red button, please;red_circle
+Slide to the leftmost slider slot;slider_0
+Slide to the rightmost slider slot;slider_4
+Move the slider to the center;slider_2
+Hit the small round button;yellow_circle
+Slap the red square button;red_square
+Push the red button;red_circle
+Push the red button;red_square
+Hit the green square;green_square
+Smash that round button;yellow_circle
+Smash that round button;red_circle
+Hit that button;red_square
+Hit that button;blue_square
+Hit that button;yellow_circle
+Slap the red round button;red_circle
+Push the green button;green_square
+Get the lever;lever
+Set the slider to four;slider_3
+Set the slider to one;slider_0
+Set the slider to five;slider_4
+Switch that lever;lever
+Push the lever;lever
+Activate the lever;lever
